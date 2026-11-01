@@ -1,0 +1,252 @@
+{
+  "tables": [
+    {
+      "rls": false,
+      "name": "blog_posts"
+    },
+    {
+      "rls": false,
+      "name": "contact_messages"
+    },
+    {
+      "rls": false,
+      "name": "legal_decisions"
+    },
+    {
+      "rls": true,
+      "name": "lr_accounts"
+    },
+    {
+      "rls": true,
+      "name": "lr_applications"
+    },
+    {
+      "rls": true,
+      "name": "lr_audit_events"
+    },
+    {
+      "rls": true,
+      "name": "lr_deadlines"
+    },
+    {
+      "rls": true,
+      "name": "lr_documents"
+    },
+    {
+      "rls": true,
+      "name": "lr_events"
+    },
+    {
+      "rls": true,
+      "name": "lr_internal_notes"
+    },
+    {
+      "rls": true,
+      "name": "lr_matter_clients"
+    },
+    {
+      "rls": true,
+      "name": "lr_matters"
+    },
+    {
+      "rls": true,
+      "name": "lr_memberships"
+    },
+    {
+      "rls": true,
+      "name": "lr_messages"
+    },
+    {
+      "rls": true,
+      "name": "lr_notification_outbox"
+    },
+    {
+      "rls": true,
+      "name": "lr_organizations"
+    },
+    {
+      "rls": true,
+      "name": "lr_relationships"
+    },
+    {
+      "rls": true,
+      "name": "lr_tasks"
+    },
+    {
+      "rls": false,
+      "name": "practice_areas"
+    },
+    {
+      "rls": false,
+      "name": "profiles"
+    },
+    {
+      "rls": false,
+      "name": "testimonials"
+    }
+  ],
+  "buckets": null,
+  "policies": [
+    {
+      "name": "account_self",
+      "check": null,
+      "table": "lr_accounts",
+      "using": "(user_id = ( SELECT auth.uid() AS uid))",
+      "command": "SELECT"
+    },
+    {
+      "name": "membership_self",
+      "check": null,
+      "table": "lr_memberships",
+      "using": "(user_id = ( SELECT auth.uid() AS uid))",
+      "command": "SELECT"
+    },
+    {
+      "name": "organization_member",
+      "check": null,
+      "table": "lr_organizations",
+      "using": "lawroom_private.is_member(id)",
+      "command": "SELECT"
+    },
+    {
+      "name": "relationship_read",
+      "check": null,
+      "table": "lr_relationships",
+      "using": "(((client_id = ( SELECT auth.uid() AS uid)) AND lawroom_private.has_role('client'::text)) OR ((lawyer_id = ( SELECT auth.uid() AS uid)) AND lawroom_private.is_member(organization_id)))",
+      "command": "SELECT"
+    },
+    {
+      "name": "matter_create",
+      "check": "((owner_id = ( SELECT auth.uid() AS uid)) AND lawroom_private.is_member(organization_id))",
+      "table": "lr_matters",
+      "using": null,
+      "command": "INSERT"
+    },
+    {
+      "name": "matter_read",
+      "check": null,
+      "table": "lr_matters",
+      "using": "lawroom_private.can_read(id)",
+      "command": "SELECT"
+    },
+    {
+      "name": "matter_update",
+      "check": "((owner_id = ( SELECT auth.uid() AS uid)) AND lawroom_private.is_member(organization_id))",
+      "table": "lr_matters",
+      "using": "lawroom_private.can_write(id)",
+      "command": "UPDATE"
+    },
+    {
+      "name": "matter_client_read",
+      "check": null,
+      "table": "lr_matter_clients",
+      "using": "lawroom_private.can_write(matter_id)",
+      "command": "SELECT"
+    },
+    {
+      "name": "event_create",
+      "check": "lawroom_private.can_write(matter_id)",
+      "table": "lr_events",
+      "using": null,
+      "command": "INSERT"
+    },
+    {
+      "name": "event_read",
+      "check": null,
+      "table": "lr_events",
+      "using": "(lawroom_private.can_write(matter_id) OR (shared AND lawroom_private.can_read(matter_id)))",
+      "command": "SELECT"
+    },
+    {
+      "name": "event_update",
+      "check": "lawroom_private.can_write(matter_id)",
+      "table": "lr_events",
+      "using": "lawroom_private.can_write(matter_id)",
+      "command": "UPDATE"
+    },
+    {
+      "name": "lawyer_insert",
+      "check": "lawroom_private.can_write(matter_id)",
+      "table": "lr_tasks",
+      "using": null,
+      "command": "INSERT"
+    },
+    {
+      "name": "lawyer_read",
+      "check": null,
+      "table": "lr_tasks",
+      "using": "lawroom_private.can_write(matter_id)",
+      "command": "SELECT"
+    },
+    {
+      "name": "lawyer_update",
+      "check": "lawroom_private.can_write(matter_id)",
+      "table": "lr_tasks",
+      "using": "lawroom_private.can_write(matter_id)",
+      "command": "UPDATE"
+    },
+    {
+      "name": "lawyer_insert",
+      "check": "lawroom_private.can_write(matter_id)",
+      "table": "lr_internal_notes",
+      "using": null,
+      "command": "INSERT"
+    },
+    {
+      "name": "lawyer_read",
+      "check": null,
+      "table": "lr_internal_notes",
+      "using": "lawroom_private.can_write(matter_id)",
+      "command": "SELECT"
+    },
+    {
+      "name": "lawyer_update",
+      "check": "lawroom_private.can_write(matter_id)",
+      "table": "lr_internal_notes",
+      "using": "lawroom_private.can_write(matter_id)",
+      "command": "UPDATE"
+    },
+    {
+      "name": "message_read",
+      "check": null,
+      "table": "lr_messages",
+      "using": "lawroom_private.can_read(matter_id)",
+      "command": "SELECT"
+    },
+    {
+      "name": "message_send",
+      "check": "((sender_id = ( SELECT auth.uid() AS uid)) AND lawroom_private.can_read(matter_id))",
+      "table": "lr_messages",
+      "using": null,
+      "command": "INSERT"
+    },
+    {
+      "name": "deadline_read",
+      "check": null,
+      "table": "lr_deadlines",
+      "using": "lawroom_private.can_write(matter_id)",
+      "command": "SELECT"
+    },
+    {
+      "name": "document_read",
+      "check": null,
+      "table": "lr_documents",
+      "using": "(lawroom_private.can_write(matter_id) OR (shared AND lawroom_private.can_read(matter_id)))",
+      "command": "SELECT"
+    },
+    {
+      "name": "application_read",
+      "check": null,
+      "table": "lr_applications",
+      "using": "((applicant_id = ( SELECT auth.uid() AS uid)) OR lawroom_private.has_role('admin'::text))",
+      "command": "SELECT"
+    },
+    {
+      "name": "application_submit",
+      "check": "((applicant_id = ( SELECT auth.uid() AS uid)) AND (status = 'pending'::text))",
+      "table": "lr_applications",
+      "using": null,
+      "command": "INSERT"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+node_modules/
+node_modules.dietapp-junction/
+dist/
+.supabase/
+supabase/.temp/
+.env*
+!.env.example

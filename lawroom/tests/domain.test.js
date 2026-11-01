@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {visibleCases,seed,transition,urgency,flow} from '../src/domain.js';
+test('admin dosya içeriği görmez, müvekkil sadece paylaşılan kendi dosyasını görür',()=>{assert.equal(visibleCases(seed,'admin').length,0);assert.deepEqual(visibleCases(seed,'client').map(x=>x.id),['1']);assert.equal(visibleCases(seed,'client','Selin Kaya').length,0)});
+test('admin ataması avukat kabulü yerine geçmez',()=>{const a=transition({status:'assignment'},'assign','admin');assert.equal(a.status,'lawyer_review');assert.throws(()=>transition(a,'accept','admin'));assert.equal(transition(a,'accept','lawyer').status,'accepted');assert.throws(()=>transition({status:'accepted'},'accept','lawyer'))});
+test('süreler İstanbul takvim gününe göre karşılaştırılır',()=>{assert.equal(urgency('2026-11-02',new Date('2026-11-01T22:00:00Z')),'Bugün');assert.equal(urgency('2026-10-31',new Date('2026-11-01T10:00:00Z')),'Gecikti');assert.equal(urgency(''),'Tarih bekliyor')});
+test('icra ve idari süreçler dava şablonundan ayrılır',()=>{assert.ok(flow('İcra').includes('Tahsilat'));assert.ok(flow('İdari').includes('Savunmalar'))});
