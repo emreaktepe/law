@@ -7,6 +7,7 @@
 - Giriş dosyası ayrıldı; demo `app/DemoApp.jsx` içinde korundu. Demo kayıtları ve canlı sorgular ayrı repository'lerde.
 - T0.5 uzak baseline doğru Supabase hesabını bekliyor; foundation yeniden çalıştırılmadı. T0.6 eski site RLS önerisi `docs/legacy-rls.md` içinde; eski tablolar değiştirilmedi.
 - CI/Pages workflow'u ve PR şablonu hazırlandı.
+- T0.7 yayınlandı: [PR #2](https://github.com/emreaktepe/law/pull/2) birleştirildi, [main CI/Pages dağıtımı](https://github.com/emreaktepe/law/actions/runs/41348097433) başarılı. [Canlı demo](https://emreaktepe.github.io/law/) tarayıcıda açıldı; giriş/kayıt ve müvekkil ilk kurulum önizlemesi doğrulandı. Yayın canlı veri modu değildir.
 - E-posta/magic link giriş, kayıt, üç adımlı ilk kurulum, başvuru/onay akışları için arayüz ve SQL. Rol metadata'dan alınmaz; atama, kabul ve dosya paylaşımı ayrı kalır.
 - Özel Storage bucket ve dosya yükleme/indirme/paylaşım RPC'leri hazırlandı. İndirme her istekte JWT/RLS kontrolünden geçer; reusable signed URL üretimi kapalıdır.
 - Resend worker'ı, kuyruk kilidi, alıcı yeniden yetkilendirmesi ve teslim kayıtları hazırlandı. Deno tür kontrolü başarılı. Gerçek gönderim kapalıdır.

@@ -84,3 +84,9 @@ Yeni giriş, kayıt ve büro ilk kurulumunun seçim → bilgi → kontrol → be
 - `deno check supabase/functions/notification-worker/index.ts`: başarılı.
 
 Uzak migration, Auth magic link dönüşü, gerçek Storage HTTP işlemleri ve Resend teslimi henüz test edilmedi. Test ortamındaki Auth/Storage şeması fixture'dır; canlı hizmet doğrulaması yerine geçmez. Uzak `db pull`/`db diff` doğru hesap erişimini bekliyor.
+
+## GitHub Pages yayını
+
+[PR #2](https://github.com/emreaktepe/law/pull/2) birleştirildi. [Main dağıtımı](https://github.com/emreaktepe/law/actions/runs/41348097433) başarılı. Adres: https://emreaktepe.github.io/law/ . Canlı Pages paketinde tanıtım → giriş → kayıt → ilk kurulum → müvekkil örnek sonucu akışı doğrulandı; console error/warning kaydı boştu. Ürün demo modunda, e-posta gönderimi kapalıdır.
+
+Kullanıcı Supabase bağlantısını yenilediğini bildirdikten sonra araçlar tekrar kontrol edildi. Bu oturumdaki MCP hâlâ `efoks`/`diet` projelerini listeliyor; `lawportal` sorguları yetki hatası veriyor. Ayrı `lawroom` CLI profiliyle giriş denemesi `ProfileLoadError: Unsupported Config Type` hatasıyla başlamadı. Yanlış projeye yazılmadı, canlı migration/bucket/SMTP uygulanmadı. Sonraki oturumda ilk iş doğru `deezwydtiibbdtimxcxf` projesi erişimini ve migration baseline'ını doğrulamaktır.

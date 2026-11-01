@@ -12,6 +12,8 @@
 
 **Son kullanıcı kararı — 1 Kasım 2026:** İlk yayın GitHub Pages ile yapılacak. Resend için Lawroom'un kendi domaini beklenecek. Dietroom yalnız benchmark'tır; onun domaini, anahtarları, SMTP'si, veri deposu veya bildirim akışı bu projeye bağlanmaz.
 
+**Yayın durumu:** https://emreaktepe.github.io/law/ üzerinde demo yayınlandı (PR #2, CI/Pages başarılı). Giriş/kayıt/ilk kurulum ekranları önizlemedir. 37 domain/repository + 8 yerel SQL testi başarılı. Canlı Supabase uygulaması bekliyor: yeniden bağlantı bu oturumdaki araçlara yansımadı; doğru proje erişimi/baseline doğrulanmadan migration çalıştırma. Resend domain bekler, anahtar oluşturulmadı.
+
 1. Bu dosyayı repoda `lawroom/AGENTS.md` (veya `lawroom/docs/plan.md` + kısa bir `AGENTS.md` yönlendirmesi) olarak tut. Codex her oturumda önce bunu okumalı.
 2. Her çalışma oturumu **tek bir ticket** (Bölüm 15) ile başlar. Ticket'ın kabul ölçütleri sağlanmadan sonraki ticket'a geçilmez.
 3. **Bölüm 4 (Değişmez ilkeler)** hiçbir ticket'ta esnetilmez. Çelişki varsa kodlamayı durdur, soruyu yaz.
