@@ -17,6 +17,7 @@ import {
   Check,
   Home,
   BookOpen,
+  Upload,
 } from "lucide-react";
 import {
   types,
@@ -27,6 +28,17 @@ import {
   transition,
 } from "../domain.js";
 
+import MatterCreateWizard from "../features/matter-create/MatterCreateWizard.jsx";
+import { buildMatterFromDraft } from "../domain/matter-create.js";
+import TodayPage from "../features/workbench/TodayPage.jsx";
+import CommandPalette from "../features/workbench/CommandPalette.jsx";
+import { completeMatterTask } from "../domain/matter-actions.js";
+import MatterListPage from "../features/matters/MatterListPage.jsx";
+import MatterCockpit from "../features/tracking/MatterCockpit.jsx";
+import ClientMatterView, { ClientMatterHome } from "../features/tracking/ClientMatterView.jsx";
+import BulkMatterActions from "../features/matter-bulk/BulkMatterActions.jsx";
+import MatterImportPage from "../features/matter-import/MatterImportPage.jsx";
+import { browserRecentMatterRepository } from "../data/recentMatterRepository.js";
 import Calendar from "../Calendar.jsx";
 import Welcome from "../Welcome.jsx";
 import LawyerProfiles from "../LawyerProfiles.jsx";
@@ -50,7 +62,8 @@ export default function DemoApp({
     [page, setPage] = useState(initialPage),
     [query, setQuery] = useState(""),
     [filter, setFilter] = useState("Tümü"),
-    [selected, setSelected] = useState(null),
+    [selected, setSelected] = useState(() => new URLSearchParams(location.hash.split('?')[1] || '').get('matter')),
+    [cockpitRequest, setCockpitRequest] = useState(null),
     [tab, setTab] = useState("Genel bakış"),
     [create, setCreate] = useState(false),
     [notice, setNotice] = useState(""),
@@ -96,6 +109,18 @@ export default function DemoApp({
       );
     }
   }
+  function completeDemoTask(matter, task) {
+    if (role !== "lawyer" || !allowed.some(item => item.id === matter.id)) return false;
+    try {
+      const existing = cases.find(item => item.id === matter.id);
+      const updated = completeMatterTask(existing, task.id, demoLawyer);
+      const next = cases.map(item => item.id === existing.id ? updated : item);
+      demoRepository.saveMatters(next);
+      setCases(next);
+      setNotice("Görev tamamlandı; demo denetim kaydı eklendi.");
+      return true;
+    } catch (error) { setNotice(error.message || "Görev kaydedilemedi."); return false; }
+  }
   function update(patch) {
     save(cases.map((c) => (c.id === selected ? { ...c, ...patch } : c)));
   }
@@ -104,34 +129,38 @@ export default function DemoApp({
     setSelected(null);
     setCreate(false);
     setQuery("");
+    const params = new URLSearchParams(location.hash.split('?')[1] || ''); params.delete('matter');
+    history.replaceState(null, '', location.pathname + location.search + '#demo?' + params);
   }
   function open(c) {
     setSelected(c.id);
     setTab("Genel bakış");
     setCreate(false);
+    setCockpitRequest(null);
+    const params = new URLSearchParams(location.hash.split('?')[1] || ''); params.set('matter', c.id);
+    history.replaceState(null, '', location.pathname + location.search + '#demo?' + params);
+    if (role === 'lawyer') { try { browserRecentMatterRepository('lawyer:' + demoLawyer).visit(String(c.id)); } catch {} }
   }
   function changeRole(r) {
     setRole(r);
     go(r === "admin" ? "Başvurular" : "Dosyalarım");
   }
-  function submitNew(e) {
-    e.preventDefault();
-    const d = Object.fromEntries(new FormData(e.currentTarget));
-    const c = {
-      ...d,
-      id: crypto.randomUUID(),
-      shared: false,
-      verified: false,
-      stage: flow(d.type)[0],
-      summary: "",
-      notes: "",
-      tasks: [],
-      events: [],
-      messages: [],
-    };
-    save([...cases, c]);
+  function createDemoMatter(input) {
+    if (role !== "lawyer") throw new Error("Dosya oluşturmak için avukat hesabı gerekir.");
+    const matter = { ...buildMatterFromDraft(input, { actorId: demoLawyer }), responsibleName: lawyer.name };
+    const next = [...cases, matter];
+    demoRepository.saveMatters(next);
+    setCases(next);
     setCreate(false);
-    open(c);
+    open(matter);
+    setNotice("Dosya oluşturuldu. İlk safahatınızı ekleyebilirsiniz. Paylaşım kapalıdır.");
+    return matter;
+  }
+  function sendClientMessage(id, body) {
+    const source = cases.find(m => m.id === id);
+    if (role !== 'client' || !source?.shared || source.client !== 'Deniz Yılmaz' || !String(body).trim()) throw new Error('Dosya paylaşımı kapalı.');
+    const next = cases.map(m => m.id === id ? { ...m, messages: [...m.messages, { id: crypto.randomUUID(), body: String(body).trim(), role: 'client', createdAt: new Date().toISOString() }] } : m);
+    demoRepository.saveMatters(next); setCases(next);
   }
   const nav =
     role === "admin"
@@ -140,7 +169,9 @@ export default function DemoApp({
           ["Sistem durumu", Home],
         ]
       : [
+          ...(role === "lawyer" ? [["Bugün", Home]] : []),
           ["Dosyalarım", Folder],
+          ...(role === 'lawyer' ? [["İçe aktarma", Upload]] : []),
           ["Takvim & süreler", CalendarDays],
           ["Müvekkiller", Users],
           ["Mesajlar", MessagesSquare],
@@ -215,6 +246,16 @@ export default function DemoApp({
           <span>
             Çalışma alanı <ChevronRight size={13} /> {page}
           </span>
+          <CommandPalette
+            ownerId={demoLawyer}
+            currentMatter={current}
+            onMatterAction={(matter, kind) => { setSelected(matter.id); setTab('Genel bakış'); setCreate(false); setCockpitRequest({ kind, key: crypto.randomUUID() }); }}
+            matters={allowed}
+            role={role}
+            onOpenMatter={open}
+            onCreateMatter={() => { go("Dosyalarım"); setCreate(true); }}
+            onNavigate={go}
+          />
           <label className="role">
             Demo rolü{" "}
             <select value={role} onChange={(e) => changeRole(e.target.value)}>
@@ -235,7 +276,17 @@ export default function DemoApp({
               <button onClick={() => setNotice("")}>Kapat</button>
             </div>
           )}
-          {page === "Takvim & süreler" && !current ? (
+          {page === 'İçe aktarma' && !current && !create && role === 'lawyer' ? (
+            <MatterImportPage actorId={demoLawyer} actorName={lawyer.name} role={role} onChanged={setCases} onBack={() => go('Dosyalarım')}/>
+          ) : page === "Bugün" && !current && !create && role === "lawyer" ? (
+            <TodayPage
+              matters={allowed}
+              role={role}
+              onCreateMatter={() => setCreate(true)}
+              onOpenMatter={(matter, targetTab) => { open(matter); setTab(targetTab); }}
+              onCompleteTask={completeDemoTask}
+            />
+          ) : page === "Takvim & süreler" && !current && !create ? (
             <Calendar
               key={role + demoLawyer}
               cases={allowed}
@@ -246,56 +297,15 @@ export default function DemoApp({
           ) : page === "Avukat sayfaları" ? (
             <LawyerProfiles canManage={role === "lawyer"} />
           ) : create ? (
-            <section className="panel">
-              <button className="text" onClick={() => setCreate(false)}>
-                ← Dosyalara dön
-              </button>
-              <h1>Yeni bir dosya açalım.</h1>
-              <p>Müvekkilin henüz burada olmasa da başlayabilirsin.</p>
-              <form onSubmit={submitNew} className="form">
-                <label>
-                  Dosya başlığı
-                  <input name="title" required maxLength={160} />
-                </label>
-                <div className="two">
-                  <label>
-                    Dosya türü
-                    <select name="type">
-                      {types.map((t) => (
-                        <option key={t}>{t}</option>
-                      ))}
-                    </select>
-                  </label>
-                  <label>
-                    Esas / takip numarası
-                    <input name="number" placeholder="2026/184 E." />
-                  </label>
-                </div>
-                <label>
-                  Mahkeme / daire
-                  <input name="court" />
-                </label>
-                <label>
-                  Müvekkil adı (isteğe bağlı)
-                  <input name="client" />
-                </label>
-                <div className="two">
-                  <label>
-                    Sıradaki işlem
-                    <input name="next" required />
-                  </label>
-                  <label>
-                    Hedef tarih
-                    <input name="due" type="date" />
-                  </label>
-                </div>
-                <p className="hint">
-                  Bu tarih bir çalışma hedefidir. Hukuki süre, dayanak ve tebliğ
-                  bilgisi kontrol edilerek ayrıca doğrulanmalıdır.
-                </p>
-                <button className="primary">Dosyayı oluştur</button>
-              </form>
-            </section>
+            <MatterCreateWizard
+              role={role}
+              onCreate={createDemoMatter}
+              onCancel={() => setCreate(false)}
+            />
+          ) : current && allowed.some(c => c.id === current.id) && role === 'client' ? (
+            <ClientMatterView key={current.id} matter={current} onBack={() => go('Dosyalarım')} onSendMessage={sendClientMessage} onChanged={setCases}/>
+          ) : current && allowed.some(c => c.id === current.id) && role === 'lawyer' ? (
+            <MatterCockpit key={current.id + ':' + (cockpitRequest?.key || tab)} matter={current} matters={allowed} actorId={demoLawyer} actorName={lawyer.name} onChanged={setCases} onBack={() => go('Dosyalarım')} onOpenMatter={open} initialTab={tab === 'Genel bakış' ? 'Genel' : tab} initialAction={cockpitRequest?.kind}/>
           ) : current && allowed.some((c) => c.id === current.id) ? (
             <>
               <button className="text" onClick={() => setSelected(null)}>
@@ -832,6 +842,23 @@ export default function DemoApp({
                 </button>
               ))}
             </section>
+          ) : role === 'client' ? (
+            <ClientMatterHome matters={allowed} onOpen={open}/>
+          ) : role === "lawyer" ? (
+            <MatterListPage
+              key={demoLawyer + ':' + query}
+              ownerId={demoLawyer}
+              role={role}
+              renderSelectionActions={(selectedMatters) => <BulkMatterActions selectedMatters={selectedMatters} actorId={demoLawyer} actorName={lawyer.name} role={role} onChanged={setCases}/>}
+              initialQuery={query}
+              matters={allowed.map((matter) => ({
+                ...matter,
+                responsibleId: matter.responsibleId || demoLawyer,
+                responsibleName: matter.responsibleName || lawyer.name,
+              }))}
+              onOpenMatter={open}
+              onCreateMatter={() => setCreate(true)}
+            />
           ) : (
             <>
               <div className="heading">

@@ -4,6 +4,10 @@
 > **Amaç:** Bu belge, Lawroom avukat–müvekkil portalının bugüne kadarki geçmişini, mevcut kod ve veritabanı durumunu, ürün ilkelerini ve özellikle **dosya takibinin** ayrıntılı tasarımını tek yerde toplar. ChatGPT / Codex ile geliştirme ve tasarım yapılırken **tek doğru kaynak** olarak kullanılmalıdır.
 > **Kural:** Sıfırdan kurulum yok. Mevcut `lawroom/` uygulaması ve canlı Supabase şeması (`lr_` tabloları) üzerine geliştirilir.
 
+> **Güncel durum — 2 Kasım 2026 (öncelikli kayıt):** Kullanıcının dosya takibini araştırıp bekleyen işleri uygulama talebiyle beş kaynaktan 17 kullanım senaryosu çıkarıldı; [araştırma ve süreç kararı](docs/matter-workflow-research.md). Kokpit, safahat/düzeltme, görev/erteleme, süre kontrolü, duruşma döngüsü, taraf/bağlı dosya, sürümlü demo belge/talep, masraf, arşiv, sade müvekkil ekranı; liste/Bugün/komut paleti/toplu işlem/CSV-XLSX aktarımı yerel demoya entegre edildi. **105 birim/repository + 8 SQL testi ve Pages build başarılı**, masaüstü/mobil/klavye ve gerçek tarayıcı akışları kontrol edildi. [Kabul kanıtı](docs/verification-tracking.md), [49 ticket'ın tek tek gerçek durumu](docs/tracking-status.md). Yerel kabul canlı DB kabulü değildir; bütün ticket'lar kapatılmadı.
+
+> **Erişim güncellemesi:** Supabase Dashboard'da `lawyer` organizasyonu → `lawportal` (`deezwydtiibbdtimxcxf`) Healthy olarak doğrulandı. Diğer Lawroom oturumunda yeni hesap ayrı bağlantı kimliğiyle okunabiliyor. Bu sohbetin eklenti çağrısı varsayılan eski hesabı seçiyor; CLI baseline/db pull ve boş db diff henüz yok. Canlı migration/bucket/RPC/SMTP değişikliği yapılmadı; foundation tekrar çalıştırılmadı. Yeni demo mutasyonları canlı repository'ye yönlendirilmez. Resend kendi Lawroom domainini bekler; Dietroom yalnız benchmark'tır.
+
 > **Uygulama güncellemesi — 1 Kasım 2026:** Kullanıcının ek talebiyle giriş, kayıt, ilk kurulum, Supabase/Storage ve GitHub Pages/Resend hazırlığı kapsama alındı. T0.1 tarayıcı kontrolü ve T0.2 bağımsız kurulum tamamlandı. Giriş dosyası/demo ayrıldı, repository sınırı eklendi. Yeni Auth/onboarding ekranları ve SQL/Storage/bildirim migration'ları yerelde doğrulandı; canlıya henüz uygulanmadı. MCP/CLI hesabı `lawportal` projesine erişemediği için T0.5 baseline bekliyor. Eski site RLS planı yazıldı; eski tablolara dokunulmadı. Yayın demosundaki gerçek avukat profilleri, Bölüm 4.11–12 gereği kurgusal örneklerle değiştirildi. Güncel ayrıntılar: `docs/changelog.md`, `docs/release-setup.md`. Aşağıdaki envanter ve yol haritası önceki durumu da içerir; tamamlanmamış fazlar tamamlandı sayılmamalıdır.
 
 ---
@@ -12,7 +16,7 @@
 
 **Son kullanıcı kararı — 1 Kasım 2026:** İlk yayın GitHub Pages ile yapılacak. Resend için Lawroom'un kendi domaini beklenecek. Dietroom yalnız benchmark'tır; onun domaini, anahtarları, SMTP'si, veri deposu veya bildirim akışı bu projeye bağlanmaz.
 
-**Yayın durumu:** https://emreaktepe.github.io/law/ üzerinde demo yayınlandı (PR #2, CI/Pages başarılı). Giriş/kayıt/ilk kurulum ekranları önizlemedir. 37 domain/repository + 8 yerel SQL testi başarılı. Canlı Supabase uygulaması bekliyor: yeniden bağlantı bu oturumdaki araçlara yansımadı; doğru proje erişimi/baseline doğrulanmadan migration çalıştırma. Resend domain bekler, anahtar oluşturulmadı.
+**Yayın durumu:** https://emreaktepe.github.io/law/ demo adresidir. İlk sürüm PR #2 ile yayınlandı. Güncel yerel paket 105 domain/repository + 8 SQL testiyle doğrulandı; son yayın sonucu `docs/changelog.md` içindedir. Giriş/kayıt/ilk kurulum önizlemedir. Baseline ve gerçek Auth/Storage/RLS E2E kabulü olmadan canlı moda geçilmez. Resend domain bekler, anahtar oluşturulmadı.
 
 1. Bu dosyayı repoda `lawroom/AGENTS.md` (veya `lawroom/docs/plan.md` + kısa bir `AGENTS.md` yönlendirmesi) olarak tut. Codex her oturumda önce bunu okumalı.
 2. Her çalışma oturumu **tek bir ticket** (Bölüm 15) ile başlar. Ticket'ın kabul ölçütleri sağlanmadan sonraki ticket'a geçilmez.
@@ -36,7 +40,7 @@
 | Alan | Sağlayıcı | Durum |
 |---|---|---|
 | Veritabanı / Auth / Storage | Supabase — proje `deezwydtiibbdtimxcxf` (`lawportal`), bölge Seul (ap-northeast-2), Nano | 15 `lr_` tablosu kurulu, RLS açık |
-| Kod deposu | GitHub `emreaktepe/law` (public) | Yerelde klonlandı; Lawroom **henüz push edilmedi** |
+| Kod deposu | GitHub `emreaktepe/law` (public) | `feature/lawroom`, PR şablonu, CI ve GitHub Pages demo yayını var |
 | E-posta | Resend | Gönderen alan adı ve API anahtarı **henüz yok** |
 | Tasarım | pen.dev (`design/lawroom.pen`) | Dosya yerelde script ile üretildi; editörde görsel doğrulama yapılamadı |
 

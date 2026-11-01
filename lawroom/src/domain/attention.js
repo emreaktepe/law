@@ -96,3 +96,5 @@ export function rankAttention(matters,now,options={}){
   }
   return ranked.sort((a,b)=>a.tier-b.tier||sortTime(a.dueAt)-sortTime(b.dueAt)||(String(a.matterId)<String(b.matterId)?-1:String(a.matterId)>String(b.matterId)?1:0));
 }
+
+export { verified as isVerifiedDeadline };

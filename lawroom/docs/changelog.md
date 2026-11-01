@@ -1,5 +1,20 @@
 # Değişiklik günlüğü
 
+## 2 Kasım 2026 — Araştırmaya dayalı dosya takibi
+
+- Beş birincil blog/rehber/ürün kaynağı incelendi; 17 kullanım senaryosu ve dosya takip kararları `matter-workflow-research.md` içinde.
+- Liste, kayıtlı görünüm, sihirbaz, Bugün, son dosyalar/bağlamsal komut paleti, toplu işlem ve gerçek CSV/XLSX içe aktarma demo uygulamasına bağlandı.
+- Yeni dosya kokpiti: hesaplanan sıradaki iş, numara geçmişi, şablon snapshot, safahat filtre/düzeltme, görev/sorumlu/öncelik/gerekçeli erteleme, aşama ve denetim geçmişi.
+- Tebligat → seçilen işler + süre incelemesi; duruşma sonucu → safahat + ara karar görevleri + sonraki duruşma; tüm alt kayıtlar tek yerel aggregate yazmasıyla saklanır.
+- Taraflar, iki yönlü dosya bağlantıları, yeni icra/kanun yolu dosyası türetme; para birimi başına kuruş hassasiyetli masraf ve ters kayıt; açık iş kontrollü salt okunur arşiv/yeniden açma.
+- Gerçek demo Blob/IndexedDB belgeleri, SHA-256, ayrı sürümler, resim/tarayıcı PDF önizleme, kaynak safahat; açık talebe bağlı müvekkil yüklemesi ve avukat incelemesi.
+- Ayrı sade müvekkil ekranı ve allow-list önizleme; iç hedef/hesap/özel not/taraf iletişimi gösterilmez. Ortak takvimde kokpit ajandası/görev/süreler; iç hedefler müvekkil takviminden çıkarıldı.
+- Kaynaklı açık kural/takvim girdileriyle yalnız öneri üreten süre aritmetiği; belirsizlikte sonuç yok. Hazır onaylı mevzuat kuralı sunulmaz.
+- Son kontrol: **105 birim/repository testi + 8 SQL testi başarılı**, Pages build başarılı. Liste pipeline'ındaki tekrar hesap kaldırıldı; 500 dosya/10k olay kabulü 300 ms altında. Masaüstü, 390px mobil, klavye, gerçek belge yükleme ve müvekkil görünümü tarayıcıda doğrulandı.
+- Canlı Supabase migration/bucket/RPC/SMTP/Realtime uygulanmadı. Resend kendi Lawroom domainini bekler. Yeni demo repository'si canlıya bağlanmadı.
+
+Ayrıntılar: [kabul kanıtı](verification-tracking.md), [ticket durumu](tracking-status.md). Aşağıdaki kayıtlar kendi tarihlerindeki ara checkpoint'lerdir; son durum olarak okunmamalıdır.
+
 ## 1 Kasım 2026 — Giriş, ilk kurulum ve yayın paketi
 
 - T0.1 tarayıcı kontrolü tamamlandı; Welcome/takvim ve yeni giriş/kayıt/ilk kurulum ekranlarının masaüstü/mobil görüntüleri `docs/screens/` içinde.
@@ -25,3 +40,24 @@ Canlı uygulanmamış işlemler ve sınırlar: [kurulum paketi](release-setup.md
 - T0.1 tamamlandı olarak işaretlenmedi; sonraki ticket'a geçilmedi.
 - Uygulama kaynakları, bağımlılıklar ve veritabanı değiştirilmedi.
 - Ayrıntılar: [T0.1 doğrulama kaydı](verification-t0.1.md).
+
+## 1–2 Kasım 2026 — Yerel liste, Bugün, komut paleti ve yeni dosya
+
+- LawRoom beklenen Supabase ref koruması ana istemciye entegre edildi; yanlış proje/URL/anahtar türü kapalı kalır. İki hesap açık bağlantı kimliğiyle doğrulandı; DietApp ile refs ayrıdır.
+- T2.4/T2.5: avukat dosya listesi, normalize arama, filtre/grup/sıralama/yoğunluk/sayfalama; demo kayıtlı görünüm, pin/default, URL durumu ve geri alınabilir kaldırma entegre edildi.
+- T2.12: dokuz kademeli dikkat sıralaması Bugün ekranına bağlandı; yazılı gerekçe ve audit'li görev tamamlama eklendi.
+- T2.13 çekirdek Ctrl+K paleti: numara/metin arama, dosya/Bugün/takvim/yeni dosya. Son beş dosya ve bağlamsal safahat/görev/duruşma komutları henüz açık.
+- T2.3: beş adımlı demo dosya sihirbazı; müvekkilsiz/kapalı paylaşım, normalize birincil no, şablon snapshot, ilk görev ve denetim kaydı. Canlı lr_create_matter/RLS/E2E tamamlanmış sayılmadı.
+- Doğrulama: son ortak unit suite 78/78 (16 takip testi kaynak ajana ait), mevcut SQL 8/8; build 1649 modül, 1.47 sn. 500 dosya/10k olay pipeline medyan 124.0 ms. Gerçek tarayıcıda arama, kayıt/reload/geri alma, klavye, 390px mobil, sihirbaz→dosya→Bugün→görev tamamlama→reload ve müvekkil gizliliği kontrol edildi.
+- Bu devam değişiklikleri yereldir; bu görev push/yayın/canlı DB yazımı yapmadı. Kaynak ajan tracking/kokpit entegrasyonunu devam ettiriyor; bütün 49 ticket kapalı değildir.
+
+Ayrıntılar ve kalanlar: [yerel doğrulama](verification-workbench-local.md), [proje bağlantıları](multi-project-supabase.md).
+### Son yerel QA — toplu işlem / CSV-XLSX / komut paleti
+
+- T2.13 bağlamsal safahat/görev/duruşma ve son beş dosya artık entegre; üç gerçek form tarayıcıda açıldı.
+- T2.14 sorumlu atama/reload, açık öğede atomik arşiv reddi ve boş dosyada salt okunur arşiv tarayıcıdan doğrulandı.
+- T2.15 CSV ve XLSX gerçek okuma/eşleme/önizleme/kayıt, reload sonrası batch geçmişi, mükerrer satırda kapalı aktarım ve geri alınabilir arşiv doğrulandı. 390px mobilde taşma ve console hatası yok.
+- İlk görev tamamlanınca aynı işi yeniden gösteren manuel hedef tekrarı kaldırıldı. Liste performansında batch attention tekrar kullanıldı; 300ms eşiği korundu. Son ortak test 105/105, 500/10k medyan 135.6ms; son build 1722 modül/1.28sn. Yeni bağımlılıkla temiz npm ci +91 unit/+8SQL/build de geçti; sonraki final kaynak kontrolleri ayrı kaydedilir.
+- Bu görev canlı DB/anahtar/CLI login/yayın yapmadı. Bütün 49 ticket'ın canlı kabulü tamamlanmış sayılmadı.
+
+Kanıt ve sınırlar: [son yerel QA](verification-bulk-import-palette.md).
