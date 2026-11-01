@@ -1,0 +1,8 @@
+.katip-mascot{display:block;width:132px;height:auto;aspect-ratio:1;object-fit:contain;flex-shrink:0}
+.welcome-mascot-intro{display:flex;gap:14px;align-items:center;margin-top:24px;max-width:370px}
+.welcome-mascot-intro .katip-mascot{width:100px}
+.welcome-mascot-intro strong{font-size:13px;font-weight:600;color:#813c28}
+.welcome-mascot-intro p{font-size:12px;line-height:1.65;margin:6px 0 0;color:#766359}
+.katip>.katip-mascot{width:136px;margin:0 auto 12px}
+.assistant>.katip-mascot{width:180px;margin:0 auto 20px}
+@media(max-width:760px){.welcome-mascot-intro .katip-mascot{width:84px}.assistant>.katip-mascot{width:144px}}

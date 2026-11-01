@@ -1,0 +1,2129 @@
+{
+  "version": "2.21",
+  "children": [
+    {
+      "id": "lr70",
+      "type": "frame",
+      "name": "01 • Avukat / Dosyalarım",
+      "layout": "horizontal",
+      "width": 1440,
+      "height": 1040,
+      "gap": 18,
+      "children": [
+        {
+          "id": "lr59",
+          "type": "frame",
+          "name": "Gezinme",
+          "layout": "vertical",
+          "width": 224,
+          "height": "fill_container",
+          "gap": 30,
+          "children": [
+            {
+              "id": "lr60",
+              "type": "text",
+              "name": "lawroom.",
+              "content": "lawroom.",
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr61",
+              "type": "text",
+              "name": "AKTEPE HUKUK BÜROSU",
+              "content": "AKTEPE HUKUK BÜROSU",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr62",
+              "type": "text",
+              "name": "Bugün",
+              "content": "Bugün",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr63",
+              "type": "text",
+              "name": "Dosyalarım",
+              "content": "Dosyalarım",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr64",
+              "type": "text",
+              "name": "Takvim & süreler",
+              "content": "Takvim & süreler",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr65",
+              "type": "text",
+              "name": "Müvekkiller",
+              "content": "Müvekkiller",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr66",
+              "type": "text",
+              "name": "Mesajlar",
+              "content": "Mesajlar",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr67",
+              "type": "text",
+              "name": "Hukuk asistanı",
+              "content": "Hukuk asistanı",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr68",
+              "type": "text",
+              "name": "Hukukun ciddiyeti,\niletişimin sıcak",
+              "content": "Hukukun ciddiyeti,\niletişimin sıcaklığı.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            }
+          ],
+          "padding": 28,
+          "fill": "#f1e6dc"
+        },
+        {
+          "id": "lr69",
+          "type": "frame",
+          "name": "Çalışma alanı",
+          "layout": "vertical",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 26,
+          "children": [
+            {
+              "id": "lr11",
+              "type": "text",
+              "name": "ÇALIŞMA ALANI / DOSYALARIM         ",
+              "content": "ÇALIŞMA ALANI / DOSYALARIM                                    1 KASIM 2026",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr12",
+              "type": "text",
+              "name": "Her dosya, bir sonraki adımıyla.",
+              "content": "Her dosya, bir sonraki adımıyla.",
+              "fontFamily": "Inter",
+              "fontSize": 32,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr13",
+              "type": "text",
+              "name": "Dağınık evraklar değil, net bir yol",
+              "content": "Dağınık evraklar değil, net bir yol haritası. Bugün öncelik sende.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr26",
+              "type": "frame",
+              "name": "Özet",
+              "layout": "horizontal",
+              "width": "fill_container",
+              "height": "fit_content",
+              "gap": 16,
+              "children": [
+                {
+                  "id": "lr16",
+                  "type": "frame",
+                  "name": "Takip edilen dosya",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr14",
+                      "type": "text",
+                      "name": "04",
+                      "content": "04",
+                      "fontFamily": "Inter",
+                      "fontSize": 30,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr15",
+                      "type": "text",
+                      "name": "Takip edilen dosya",
+                      "content": "Takip edilen dosya",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#FFFFFF",
+                  "padding": 24,
+                  "cornerRadius": 14
+                },
+                {
+                  "id": "lr19",
+                  "type": "frame",
+                  "name": "Yaklaşan işlem",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr17",
+                      "type": "text",
+                      "name": "01",
+                      "content": "01",
+                      "fontFamily": "Inter",
+                      "fontSize": 30,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr18",
+                      "type": "text",
+                      "name": "Yaklaşan işlem",
+                      "content": "Yaklaşan işlem",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#FFFFFF",
+                  "padding": 24,
+                  "cornerRadius": 14
+                },
+                {
+                  "id": "lr22",
+                  "type": "frame",
+                  "name": "Tarih kontrolü bekleyen",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr20",
+                      "type": "text",
+                      "name": "02",
+                      "content": "02",
+                      "fontFamily": "Inter",
+                      "fontSize": 30,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr21",
+                      "type": "text",
+                      "name": "Tarih kontrolü bekleyen",
+                      "content": "Tarih kontrolü bekleyen",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#FFFFFF",
+                  "padding": 24,
+                  "cornerRadius": 14
+                },
+                {
+                  "id": "lr25",
+                  "type": "frame",
+                  "name": "Müvekkile açık dosya",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr23",
+                      "type": "text",
+                      "name": "01",
+                      "content": "01",
+                      "fontFamily": "Inter",
+                      "fontSize": 30,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr24",
+                      "type": "text",
+                      "name": "Müvekkile açık dosya",
+                      "content": "Müvekkile açık dosya",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#FFFFFF",
+                  "padding": 24,
+                  "cornerRadius": 14
+                }
+              ]
+            },
+            {
+              "id": "lr58",
+              "type": "frame",
+              "name": "İş listesi ve odak",
+              "layout": "horizontal",
+              "width": "fill_container",
+              "height": "fit_content",
+              "gap": 24,
+              "children": [
+                {
+                  "id": "lr46",
+                  "type": "frame",
+                  "name": "Dosya listesi",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr27",
+                      "type": "text",
+                      "name": "Dosyalarım                         ",
+                      "content": "Dosyalarım                                       + Yeni dosya",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr28",
+                      "type": "text",
+                      "name": "⌕  Dosya, esas no veya müvekkil ara",
+                      "content": "⌕  Dosya, esas no veya müvekkil ara…",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr29",
+                      "type": "text",
+                      "name": "Tümü   /   Süresi yaklaşan   /   İc",
+                      "content": "Tümü   /   Süresi yaklaşan   /   İcra   /   Aile   /   İdari",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr33",
+                      "type": "frame",
+                      "name": "İşe iade talebi",
+                      "layout": "vertical",
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "gap": 9,
+                      "children": [
+                        {
+                          "id": "lr30",
+                          "type": "text",
+                          "name": "İşe iade talebi",
+                          "content": "İşe iade talebi",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fill": "#3f302a",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr31",
+                          "type": "text",
+                          "name": "2026/184 E. · Deniz Yılmaz · İş huk",
+                          "content": "2026/184 E. · Deniz Yılmaz · İş hukuku",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fill": "#766359",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr32",
+                          "type": "text",
+                          "name": "03 Kas • Beyan dilekçesi  →",
+                          "content": "03 Kas • Beyan dilekçesi  →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fill": "#8B542D",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        }
+                      ],
+                      "fill": "#f9f5f2",
+                      "padding": 18,
+                      "cornerRadius": 14
+                    },
+                    {
+                      "id": "lr37",
+                      "type": "frame",
+                      "name": "Ticari alacak takibi",
+                      "layout": "vertical",
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "gap": 9,
+                      "children": [
+                        {
+                          "id": "lr34",
+                          "type": "text",
+                          "name": "Ticari alacak takibi",
+                          "content": "Ticari alacak takibi",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fill": "#3f302a",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr35",
+                          "type": "text",
+                          "name": "2026/521 E. · Ekin Teknoloji · İcra",
+                          "content": "2026/521 E. · Ekin Teknoloji · İcra",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fill": "#766359",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr36",
+                          "type": "text",
+                          "name": "04 Kas • Tebligat kontrolü  →",
+                          "content": "04 Kas • Tebligat kontrolü  →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fill": "#8B542D",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        }
+                      ],
+                      "fill": "#f9f5f2",
+                      "padding": 18,
+                      "cornerRadius": 14
+                    },
+                    {
+                      "id": "lr41",
+                      "type": "frame",
+                      "name": "Anlaşmalı boşanma",
+                      "layout": "vertical",
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "gap": 9,
+                      "children": [
+                        {
+                          "id": "lr38",
+                          "type": "text",
+                          "name": "Anlaşmalı boşanma",
+                          "content": "Anlaşmalı boşanma",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fill": "#3f302a",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr39",
+                          "type": "text",
+                          "name": "2026/92 E. · Selin Kaya · Aile",
+                          "content": "2026/92 E. · Selin Kaya · Aile",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fill": "#766359",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr40",
+                          "type": "text",
+                          "name": "06 Kas • Duruşma hazırlığı  →",
+                          "content": "06 Kas • Duruşma hazırlığı  →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fill": "#8B542D",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        }
+                      ],
+                      "fill": "#f9f5f2",
+                      "padding": 18,
+                      "cornerRadius": 14
+                    },
+                    {
+                      "id": "lr45",
+                      "type": "frame",
+                      "name": "İdari işlemin iptali",
+                      "layout": "vertical",
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "gap": 9,
+                      "children": [
+                        {
+                          "id": "lr42",
+                          "type": "text",
+                          "name": "İdari işlemin iptali",
+                          "content": "İdari işlemin iptali",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fill": "#3f302a",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr43",
+                          "type": "text",
+                          "name": "2026/307 E. · Bora Demir · İdari",
+                          "content": "2026/307 E. · Bora Demir · İdari",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fill": "#766359",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr44",
+                          "type": "text",
+                          "name": "09 Kas • Belge kontrolü  →",
+                          "content": "09 Kas • Belge kontrolü  →",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fill": "#8B542D",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        }
+                      ],
+                      "fill": "#f9f5f2",
+                      "padding": 18,
+                      "cornerRadius": 14
+                    }
+                  ],
+                  "fill": "#FFFFFF",
+                  "padding": 24,
+                  "cornerRadius": 14
+                },
+                {
+                  "id": "lr57",
+                  "type": "frame",
+                  "name": "Odak",
+                  "layout": "vertical",
+                  "width": 280,
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr47",
+                      "type": "text",
+                      "name": "KÜÇÜK ADIMLAR, NET SÜREÇLER",
+                      "content": "KÜÇÜK ADIMLAR, NET SÜREÇLER",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr48",
+                      "type": "text",
+                      "name": "Önce bunlara\nbakalım.",
+                      "content": "Önce bunlara\nbakalım.",
+                      "fontFamily": "Inter",
+                      "fontSize": 25,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr49",
+                      "type": "text",
+                      "name": "03 KASIM • ÖNCELİKLİ",
+                      "content": "03 KASIM • ÖNCELİKLİ",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#8B542D",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr50",
+                      "type": "text",
+                      "name": "Deniz Yılmaz",
+                      "content": "Deniz Yılmaz",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr51",
+                      "type": "text",
+                      "name": "Beyan dilekçesi hazırlanacak.",
+                      "content": "Beyan dilekçesi hazırlanacak.",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr52",
+                      "type": "text",
+                      "name": "Süre avukat tarafından doğrulandı. ",
+                      "content": "Süre avukat tarafından doğrulandı. Kaynak evrak dosyada.",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr53",
+                      "type": "text",
+                      "name": "✦",
+                      "content": "✦",
+                      "fontFamily": "Inter",
+                      "fontSize": 56,
+                      "fill": "#957059",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr54",
+                      "type": "text",
+                      "name": "Kâtip’in küçük notu",
+                      "content": "Kâtip’in küçük notu",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr55",
+                      "type": "text",
+                      "name": "“Dosyalar kabarabilir.\nKafan kabarm",
+                      "content": "“Dosyalar kabarabilir.\nKafan kabarmasın.”",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr56",
+                      "type": "text",
+                      "name": "Dosya bilgilerini aç  ↗",
+                      "content": "Dosya bilgilerini aç  ↗",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#efdfd1",
+                  "padding": 24,
+                  "cornerRadius": 14
+                }
+              ]
+            }
+          ],
+          "padding": 36
+        }
+      ],
+      "x": 0,
+      "y": 300,
+      "fill": "#faf6f1",
+      "clip": true
+    },
+    {
+      "id": "lr111",
+      "type": "frame",
+      "name": "02 • Dosya ayrıntısı / Avukat",
+      "layout": "horizontal",
+      "width": 1440,
+      "height": 1040,
+      "gap": 18,
+      "children": [
+        {
+          "id": "lr100",
+          "type": "frame",
+          "name": "Gezinme",
+          "layout": "vertical",
+          "width": 224,
+          "height": "fill_container",
+          "gap": 30,
+          "children": [
+            {
+              "id": "lr101",
+              "type": "text",
+              "name": "lawroom.",
+              "content": "lawroom.",
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr102",
+              "type": "text",
+              "name": "AKTEPE HUKUK BÜROSU",
+              "content": "AKTEPE HUKUK BÜROSU",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr103",
+              "type": "text",
+              "name": "Bugün",
+              "content": "Bugün",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr104",
+              "type": "text",
+              "name": "Dosyalarım",
+              "content": "Dosyalarım",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr105",
+              "type": "text",
+              "name": "Takvim & süreler",
+              "content": "Takvim & süreler",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr106",
+              "type": "text",
+              "name": "Müvekkiller",
+              "content": "Müvekkiller",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr107",
+              "type": "text",
+              "name": "Mesajlar",
+              "content": "Mesajlar",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr108",
+              "type": "text",
+              "name": "Hukuk asistanı",
+              "content": "Hukuk asistanı",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr109",
+              "type": "text",
+              "name": "Hukukun ciddiyeti,\niletişimin sıcak",
+              "content": "Hukukun ciddiyeti,\niletişimin sıcaklığı.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            }
+          ],
+          "padding": 28,
+          "fill": "#f1e6dc"
+        },
+        {
+          "id": "lr110",
+          "type": "frame",
+          "name": "Çalışma alanı",
+          "layout": "vertical",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 26,
+          "children": [
+            {
+              "id": "lr71",
+              "type": "text",
+              "name": "DOSYALARIM / 2026/184 E.",
+              "content": "DOSYALARIM / 2026/184 E.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr72",
+              "type": "text",
+              "name": "İşe iade talebi",
+              "content": "İşe iade talebi",
+              "fontFamily": "Inter",
+              "fontSize": 34,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr73",
+              "type": "text",
+              "name": "Deniz Yılmaz · İstanbul 14. İş Mahk",
+              "content": "Deniz Yılmaz · İstanbul 14. İş Mahkemesi                      UYAP’a git ↗",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr74",
+              "type": "text",
+              "name": "Genel bakış     Safahat     Belgele",
+              "content": "Genel bakış     Safahat     Belgeler     Mesajlar     İç notlar     Paylaşım",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr99",
+              "type": "frame",
+              "name": "Dosya içeriği",
+              "layout": "horizontal",
+              "width": "fill_container",
+              "height": "fit_content",
+              "gap": 24,
+              "children": [
+                {
+                  "id": "lr89",
+                  "type": "frame",
+                  "name": "Dosya yol haritası",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr75",
+                      "type": "text",
+                      "name": "DOSYANIN YOL HARİTASI",
+                      "content": "DOSYANIN YOL HARİTASI",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr76",
+                      "type": "text",
+                      "name": "Hazırlık → Dilekçeler → Ön inceleme",
+                      "content": "Hazırlık → Dilekçeler → Ön inceleme → Tahkikat → Karar",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr77",
+                      "type": "text",
+                      "name": "Müvekkile açık özet",
+                      "content": "Müvekkile açık özet",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr78",
+                      "type": "text",
+                      "name": "Dosyanızda delillerin değerlendiril",
+                      "content": "Dosyanızda delillerin değerlendirilmesi aşamasındayız. Bir sonraki adım, beyanlarımızın mahkemeye sunulması.",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr79",
+                      "type": "text",
+                      "name": "Sıradaki adım",
+                      "content": "Sıradaki adım",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr83",
+                      "type": "frame",
+                      "name": "İşlem",
+                      "layout": "vertical",
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "gap": 18,
+                      "children": [
+                        {
+                          "id": "lr80",
+                          "type": "text",
+                          "name": "Beyan dilekçesini hazırla",
+                          "content": "Beyan dilekçesini hazırla",
+                          "fontFamily": "Inter",
+                          "fontSize": 17,
+                          "fill": "#3f302a",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr81",
+                          "type": "text",
+                          "name": "03 Kasım 2026 · Avukat tarafından d",
+                          "content": "03 Kasım 2026 · Avukat tarafından doğrulandı",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fill": "#766359",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        },
+                        {
+                          "id": "lr82",
+                          "type": "text",
+                          "name": "Kaynak evrak: bilirkişi raporu · 28",
+                          "content": "Kaynak evrak: bilirkişi raporu · 28 Ekim 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fill": "#766359",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container"
+                        }
+                      ],
+                      "fill": "#f2eae6",
+                      "padding": 24,
+                      "cornerRadius": 14
+                    },
+                    {
+                      "id": "lr84",
+                      "type": "text",
+                      "name": "Son gelişmeler",
+                      "content": "Son gelişmeler",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr85",
+                      "type": "text",
+                      "name": "28 Ekim   Bilirkişi raporu dosyaya ",
+                      "content": "28 Ekim   Bilirkişi raporu dosyaya eklendi",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr86",
+                      "type": "text",
+                      "name": "Müvekkile açık",
+                      "content": "Müvekkile açık",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr87",
+                      "type": "text",
+                      "name": "29 Ekim   İç değerlendirme yapıldı",
+                      "content": "29 Ekim   İç değerlendirme yapıldı",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr88",
+                      "type": "text",
+                      "name": "Yalnız büro",
+                      "content": "Yalnız büro",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#FFFFFF",
+                  "padding": 24,
+                  "cornerRadius": 14
+                },
+                {
+                  "id": "lr98",
+                  "type": "frame",
+                  "name": "Görevler",
+                  "layout": "vertical",
+                  "width": 300,
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr90",
+                      "type": "text",
+                      "name": "Küçük adımlar.",
+                      "content": "Küçük adımlar.",
+                      "fontFamily": "Inter",
+                      "fontSize": 23,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr91",
+                      "type": "text",
+                      "name": "○ Beyan dilekçesini hazırla",
+                      "content": "○ Beyan dilekçesini hazırla",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr92",
+                      "type": "text",
+                      "name": "✓ Belgeleri sınıflandır",
+                      "content": "✓ Belgeleri sınıflandır",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr93",
+                      "type": "text",
+                      "name": "+ Görev ekle",
+                      "content": "+ Görev ekle",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr94",
+                      "type": "text",
+                      "name": "PAYLAŞIM DENETİMİ",
+                      "content": "PAYLAŞIM DENETİMİ",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr95",
+                      "type": "text",
+                      "name": "Dosya müvekkile açık",
+                      "content": "Dosya müvekkile açık",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr96",
+                      "type": "text",
+                      "name": "İç notlar ve çalışma taslakları yal",
+                      "content": "İç notlar ve çalışma taslakları yalnızca yetkili avukatlara görünür.",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr97",
+                      "type": "text",
+                      "name": "Müvekkil görünümünü aç →",
+                      "content": "Müvekkil görünümünü aç →",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#efdfd1",
+                  "padding": 24,
+                  "cornerRadius": 14
+                }
+              ]
+            }
+          ],
+          "padding": 36
+        }
+      ],
+      "x": 1520,
+      "y": 300,
+      "fill": "#faf6f1",
+      "clip": true
+    },
+    {
+      "id": "lr144",
+      "type": "frame",
+      "name": "03 • Müvekkil / Dosyam",
+      "layout": "horizontal",
+      "width": 1440,
+      "height": 1040,
+      "gap": 18,
+      "children": [
+        {
+          "id": "lr133",
+          "type": "frame",
+          "name": "Gezinme",
+          "layout": "vertical",
+          "width": 224,
+          "height": "fill_container",
+          "gap": 30,
+          "children": [
+            {
+              "id": "lr145",
+              "type": "text",
+              "name": "lawroom.",
+              "content": "lawroom.",
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr146",
+              "type": "text",
+              "name": "MÜVEKKİL ALANI",
+              "content": "MÜVEKKİL ALANI",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr147",
+              "type": "text",
+              "name": "Dosyalarım",
+              "content": "Dosyalarım",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr148",
+              "type": "text",
+              "name": "Mesajlar",
+              "content": "Mesajlar",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr149",
+              "type": "text",
+              "name": "Belgelerim",
+              "content": "Belgelerim",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr150",
+              "type": "text",
+              "name": "Birlikte, güvenle.",
+              "content": "Birlikte, güvenle.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            }
+          ],
+          "padding": 28,
+          "fill": "#f1e6dc"
+        },
+        {
+          "id": "lr143",
+          "type": "frame",
+          "name": "Çalışma alanı",
+          "layout": "vertical",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 26,
+          "children": [
+            {
+              "id": "lr112",
+              "type": "text",
+              "name": "SİZİN İÇİN, DAHA ANLAŞILIR",
+              "content": "SİZİN İÇİN, DAHA ANLAŞILIR",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr113",
+              "type": "text",
+              "name": "Süreciniz, tüm açıklığıyla.",
+              "content": "Süreciniz, tüm açıklığıyla.",
+              "fontFamily": "Inter",
+              "fontSize": 34,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr114",
+              "type": "text",
+              "name": "Merhaba Deniz. Avukatınızın paylaşt",
+              "content": "Merhaba Deniz. Avukatınızın paylaştığı gelişmeler burada.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr121",
+              "type": "frame",
+              "name": "Dosya özeti",
+              "layout": "vertical",
+              "width": "fill_container",
+              "height": "fit_content",
+              "gap": 18,
+              "children": [
+                {
+                  "id": "lr115",
+                  "type": "text",
+                  "name": "İŞ HUKUKU / 2026/184 E.",
+                  "content": "İŞ HUKUKU / 2026/184 E.",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fill": "#766359",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr116",
+                  "type": "text",
+                  "name": "İşe iade talebi",
+                  "content": "İşe iade talebi",
+                  "fontFamily": "Inter",
+                  "fontSize": 25,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr117",
+                  "type": "text",
+                  "name": "Şu anda: deliller değerlendiriliyor",
+                  "content": "Şu anda: deliller değerlendiriliyor.",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr118",
+                  "type": "text",
+                  "name": "Dosyanızda delillerin değerlendiril",
+                  "content": "Dosyanızda delillerin değerlendirilmesi aşamasındayız. Bir sonraki adım, beyanlarımızın mahkemeye sunulması.",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr119",
+                  "type": "text",
+                  "name": "Sıradaki adım • 3 Kasım",
+                  "content": "Sıradaki adım • 3 Kasım",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr120",
+                  "type": "text",
+                  "name": "Avukatınız beyan dilekçesini hazırl",
+                  "content": "Avukatınız beyan dilekçesini hazırlıyor. Sizden şu an bir belge beklenmiyor.",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fill": "#766359",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                }
+              ],
+              "fill": "#FFFFFF",
+              "padding": 24,
+              "cornerRadius": 14
+            },
+            {
+              "id": "lr132",
+              "type": "frame",
+              "name": "İletişim ve gelişmeler",
+              "layout": "horizontal",
+              "width": "fill_container",
+              "height": "fit_content",
+              "gap": 24,
+              "children": [
+                {
+                  "id": "lr126",
+                  "type": "frame",
+                  "name": "Gelişmeler",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr122",
+                      "type": "text",
+                      "name": "Dosyanızda neler oldu?",
+                      "content": "Dosyanızda neler oldu?",
+                      "fontFamily": "Inter",
+                      "fontSize": 23,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr123",
+                      "type": "text",
+                      "name": "28 Ekim · Bilirkişi raporu eklendi",
+                      "content": "28 Ekim · Bilirkişi raporu eklendi",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr124",
+                      "type": "text",
+                      "name": "Avukatınızın değerlendirmesi sonras",
+                      "content": "Avukatınızın değerlendirmesi sonrası yeni gelişmeler burada paylaşılacak.",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr125",
+                      "type": "text",
+                      "name": "Paylaşılan belgeler →",
+                      "content": "Paylaşılan belgeler →",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#FFFFFF",
+                  "padding": 24,
+                  "cornerRadius": 14
+                },
+                {
+                  "id": "lr131",
+                  "type": "frame",
+                  "name": "İletişim",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr127",
+                      "type": "text",
+                      "name": "Bir sorunuz mu var?",
+                      "content": "Bir sorunuz mu var?",
+                      "fontFamily": "Inter",
+                      "fontSize": 23,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr128",
+                      "type": "text",
+                      "name": "Avukatınızla dosyaya bağlı, yazılı ",
+                      "content": "Avukatınızla dosyaya bağlı, yazılı iletişim kurun.",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr129",
+                      "type": "text",
+                      "name": "Mesaj yaz →",
+                      "content": "Mesaj yaz →",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr130",
+                      "type": "text",
+                      "name": "Kâtip’in müvekkil danışmanlığı sonr",
+                      "content": "Kâtip’in müvekkil danışmanlığı sonraki aşamada.",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#efdfd1",
+                  "padding": 24,
+                  "cornerRadius": 14
+                }
+              ]
+            }
+          ],
+          "padding": 36
+        }
+      ],
+      "x": 0,
+      "y": 1420,
+      "fill": "#faf6f1",
+      "clip": true
+    },
+    {
+      "id": "lr179",
+      "type": "frame",
+      "name": "04 • Sistem yönetimi / Başvurular",
+      "layout": "horizontal",
+      "width": 1440,
+      "height": 1040,
+      "gap": 18,
+      "children": [
+        {
+          "id": "lr168",
+          "type": "frame",
+          "name": "Gezinme",
+          "layout": "vertical",
+          "width": 224,
+          "height": "fill_container",
+          "gap": 30,
+          "children": [
+            {
+              "id": "lr180",
+              "type": "text",
+              "name": "lawroom.",
+              "content": "lawroom.",
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr181",
+              "type": "text",
+              "name": "SİSTEM YÖNETİMİ",
+              "content": "SİSTEM YÖNETİMİ",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr182",
+              "type": "text",
+              "name": "Başvurular",
+              "content": "Başvurular",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr183",
+              "type": "text",
+              "name": "Atamalar",
+              "content": "Atamalar",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr184",
+              "type": "text",
+              "name": "Bürolar",
+              "content": "Bürolar",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr185",
+              "type": "text",
+              "name": "Sistem sağlığı",
+              "content": "Sistem sağlığı",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr186",
+              "type": "text",
+              "name": "Dosya içeriklerine erişim yok",
+              "content": "Dosya içeriklerine erişim yok",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            }
+          ],
+          "padding": 28,
+          "fill": "#f1e6dc"
+        },
+        {
+          "id": "lr178",
+          "type": "frame",
+          "name": "Çalışma alanı",
+          "layout": "vertical",
+          "width": "fill_container",
+          "height": "fill_container",
+          "gap": 26,
+          "children": [
+            {
+              "id": "lr151",
+              "type": "text",
+              "name": "SİSTEM YÖNETİMİ",
+              "content": "SİSTEM YÖNETİMİ",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr152",
+              "type": "text",
+              "name": "Güvenli bir başlangıç.",
+              "content": "Güvenli bir başlangıç.",
+              "fontFamily": "Inter",
+              "fontSize": 34,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr153",
+              "type": "text",
+              "name": "Başvurular, atamalar ve sistem sağl",
+              "content": "Başvurular, atamalar ve sistem sağlığı. Dosya içerikleri bu alanda yer almaz.",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fill": "#766359",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            },
+            {
+              "id": "lr164",
+              "type": "frame",
+              "name": "Başvurular",
+              "layout": "vertical",
+              "width": "fill_container",
+              "height": "fit_content",
+              "gap": 18,
+              "children": [
+                {
+                  "id": "lr154",
+                  "type": "text",
+                  "name": "Avukat ve büro başvuruları",
+                  "content": "Avukat ve büro başvuruları",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr158",
+                  "type": "frame",
+                  "name": "Büro",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr155",
+                      "type": "text",
+                      "name": "Ada Hukuk Bürosu",
+                      "content": "Ada Hukuk Bürosu",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr156",
+                      "type": "text",
+                      "name": "Büro başvurusu · Sicil ve yetki doğ",
+                      "content": "Büro başvurusu · Sicil ve yetki doğrulama bekliyor",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr157",
+                      "type": "text",
+                      "name": "Onayla      Gerekçeyle reddet",
+                      "content": "Onayla      Gerekçeyle reddet",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#f9f5f2",
+                  "padding": 24,
+                  "cornerRadius": 14
+                },
+                {
+                  "id": "lr159",
+                  "type": "text",
+                  "name": "Müvekkil atamaları",
+                  "content": "Müvekkil atamaları",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr163",
+                  "type": "frame",
+                  "name": "Atama",
+                  "layout": "vertical",
+                  "width": "fill_container",
+                  "height": "fit_content",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "id": "lr160",
+                      "type": "text",
+                      "name": "Elif Arslan",
+                      "content": "Elif Arslan",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr161",
+                      "type": "text",
+                      "name": "Avukat ataması istiyor",
+                      "content": "Avukat ataması istiyor",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fill": "#766359",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    },
+                    {
+                      "id": "lr162",
+                      "type": "text",
+                      "name": "Avukat seç → Avukat kabulüne gönder",
+                      "content": "Avukat seç → Avukat kabulüne gönder",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fill": "#3f302a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container"
+                    }
+                  ],
+                  "fill": "#f9f5f2",
+                  "padding": 24,
+                  "cornerRadius": 14
+                }
+              ],
+              "fill": "#FFFFFF",
+              "padding": 24,
+              "cornerRadius": 14
+            },
+            {
+              "id": "lr167",
+              "type": "frame",
+              "name": "Kabul ilkesi",
+              "layout": "vertical",
+              "width": "fill_container",
+              "height": "fit_content",
+              "gap": 18,
+              "children": [
+                {
+                  "id": "lr165",
+                  "type": "text",
+                  "name": "Atama, kabul değildir.",
+                  "content": "Atama, kabul değildir.",
+                  "fontFamily": "Inter",
+                  "fontSize": 23,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                },
+                {
+                  "id": "lr166",
+                  "type": "text",
+                  "name": "Admin uygun avukata yönlendirir. Mü",
+                  "content": "Admin uygun avukata yönlendirir. Müvekkillik ilişkisi avukatın kabulüyle başlar. Referanslı başvurular doğrudan ilgili avukatın onayına gider.",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fill": "#3f302a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container"
+                }
+              ],
+              "fill": "#efdfd1",
+              "padding": 24,
+              "cornerRadius": 14
+            }
+          ],
+          "padding": 36
+        }
+      ],
+      "x": 1520,
+      "y": 1420,
+      "fill": "#faf6f1",
+      "clip": true
+    },
+    {
+      "type": "frame",
+      "id": "profile10001",
+      "name": "05 • Avukat tanıtımı / Alkım Azmioğlu",
+      "x": 0,
+      "y": 2540,
+      "width": 1440,
+      "height": 940,
+      "layout": "vertical",
+      "padding": 64,
+      "gap": 30,
+      "fill": "#faf6f1",
+      "clip": true,
+      "children": [
+        {
+          "type": "text",
+          "id": "profile10002",
+          "name": "lawroom.                      ",
+          "content": "lawroom.                                      Hakkında     Yazılar     Başvuru",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10003",
+          "name": "AVUKAT / BÜRO TANITIM SAYFASI",
+          "content": "AVUKAT / BÜRO TANITIM SAYFASI",
+          "fontFamily": "Inter",
+          "fontSize": 11,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10004",
+          "name": "Av. Alkım Azmioğlu",
+          "content": "Av. Alkım Azmioğlu",
+          "fontFamily": "Inter",
+          "fontSize": 44,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10005",
+          "name": "Mizan Hukuk Bürosu Uşak",
+          "content": "Mizan Hukuk Bürosu Uşak",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10006",
+          "name": "Mesleki bilgiler ve hukuk notl",
+          "content": "Mesleki bilgiler ve hukuk notları. Başvuru, avukatın kabulüyle ilerler.",
+          "fontFamily": "Inter",
+          "fontSize": 17,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "profile10007",
+          "name": "Başvuru",
+          "layout": "vertical",
+          "width": 300,
+          "padding": 20,
+          "fill": "#efdfd1",
+          "cornerRadius": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "profile10008",
+              "name": "Müvekkil başvurusu →",
+              "content": "Müvekkil başvurusu →",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "profile10009",
+          "name": "Mesleki bilgiler",
+          "content": "Mesleki bilgiler",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10010",
+          "name": "TEİD Academy Next Gen · 2. dön",
+          "content": "TEİD Academy Next Gen · 2. dönem\nKaynak: TEİD mezun listesi ve LinkedIn arama görünümü.",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10011",
+          "name": "Hukuk notları",
+          "content": "Hukuk notları",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10012",
+          "name": "Henüz yayımlanmış yazı yok. Pr",
+          "content": "Henüz yayımlanmış yazı yok. Profil sahibi adına içerik üretilmedi.",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10013",
+          "name": "Demo taslak · Yayında değil · ",
+          "content": "Demo taslak · Yayında değil · Bilgiler profil sahibi onayı bekliyor.",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "profile10014",
+      "name": "06 • Avukat tanıtımı / Enes Can Yolcu",
+      "x": 1520,
+      "y": 2540,
+      "width": 1440,
+      "height": 940,
+      "layout": "vertical",
+      "padding": 64,
+      "gap": 30,
+      "fill": "#faf6f1",
+      "clip": true,
+      "children": [
+        {
+          "type": "text",
+          "id": "profile10015",
+          "name": "lawroom.                      ",
+          "content": "lawroom.                                      Hakkında     Yazılar     Başvuru",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10016",
+          "name": "AVUKAT / BÜRO TANITIM SAYFASI",
+          "content": "AVUKAT / BÜRO TANITIM SAYFASI",
+          "fontFamily": "Inter",
+          "fontSize": 11,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10017",
+          "name": "Av. Enes Can Yolcu",
+          "content": "Av. Enes Can Yolcu",
+          "fontFamily": "Inter",
+          "fontSize": 44,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10018",
+          "name": "ES Avukatlık & Hukuki Danışman",
+          "content": "ES Avukatlık & Hukuki Danışmanlık",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10019",
+          "name": "Mesleki bilgiler ve hukuk notl",
+          "content": "Mesleki bilgiler ve hukuk notları. Başvuru, avukatın kabulüyle ilerler.",
+          "fontFamily": "Inter",
+          "fontSize": 17,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "profile10020",
+          "name": "Başvuru",
+          "layout": "vertical",
+          "width": 300,
+          "padding": 20,
+          "fill": "#efdfd1",
+          "cornerRadius": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "profile10021",
+              "name": "Müvekkil başvurusu →",
+              "content": "Müvekkil başvurusu →",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fill": "#3f302a",
+              "textGrowth": "fixed-width",
+              "width": "fill_container"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "profile10022",
+          "name": "Mesleki bilgiler",
+          "content": "Mesleki bilgiler",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10023",
+          "name": "Kullanıcının paylaştığı büro s",
+          "content": "Kullanıcının paylaştığı büro sitesi esas alındı.\nÖzgeçmiş profil sahibi tarafından tamamlanacak.",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10024",
+          "name": "Hukuk notları",
+          "content": "Hukuk notları",
+          "fontFamily": "Inter",
+          "fontSize": 24,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10025",
+          "name": "Henüz yayımlanmış yazı yok. Pr",
+          "content": "Henüz yayımlanmış yazı yok. Profil sahibi adına içerik üretilmedi.",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "type": "text",
+          "id": "profile10026",
+          "name": "Demo taslak · Yayında değil · ",
+          "content": "Demo taslak · Yayında değil · Bilgiler profil sahibi onayı bekliyor.",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fill": "#3f302a",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        }
+      ]
+    }
+  ]
+}
