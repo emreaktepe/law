@@ -47,6 +47,8 @@ Kaynak: [Supabase Storage erişim kuralları](https://supabase.com/docs/guides/s
 
 ## Resend
 
+Kullanıcı kararı (1 Kasım 2026): Lawroom için yeni domain beklenecek. Dietroom yalnız tasarım/akış benchmark'ıdır; onun domaini, API anahtarı, SMTP ayarı, veritabanı veya bildirim kuyruğu Lawroom'a bağlanmaz. Bu oturumda Resend anahtarı oluşturulmadı ve SMTP değiştirilmedi.
+
 Auth e-postaları için Supabase SMTP: `smtp.resend.com`, port `465`, kullanıcı `resend`, parola Resend API anahtarı. Anahtar yalnız Supabase sunucu ayarında saklanır. Kendi doğrulanmış domaini olmadan `onboarding@resend.dev` yalnız Resend hesabının kendi adresine test gönderebilir; genel kullanıcı kayıtlarına hazır sayılmaz.
 
 Bildirim worker'ı `supabase/functions/notification-worker/index.ts` içindedir. Varsayılan `NOTIFICATIONS_ENABLED=false`. Sunucu sırrı olmadan çağrı reddedilir. Worker her alıcıyı gönderimden hemen önce yeniden yetkilendirir; içerik dosya başlığı, kişi adı veya hukuki ayrıntı içermez. Sabit Resend idempotency anahtarı ve teslim denemeleri vardır. 24 saatlik sağlayıcı idempotency penceresi aşılmadan otomatik tekrarlar durdurulur.

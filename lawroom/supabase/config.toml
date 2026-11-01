@@ -241,7 +241,7 @@ otp_expiry = 3600
 # port = 465
 # user = "resend"
 # pass = "env(RESEND_API_KEY)"
-# admin_email = "onboarding@resend.dev" # Only your own Resend account address is a valid test recipient.
+# admin_email = "bildirim@YOUR_LAWROOM_DOMAIN" # Configure only after Lawroom's own domain is verified.
 # sender_name = "Lawroom"
 
 [auth.email.template.magic_link]

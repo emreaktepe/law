@@ -10,6 +10,7 @@
 - E-posta/magic link giriş, kayıt, üç adımlı ilk kurulum, başvuru/onay akışları için arayüz ve SQL. Rol metadata'dan alınmaz; atama, kabul ve dosya paylaşımı ayrı kalır.
 - Özel Storage bucket ve dosya yükleme/indirme/paylaşım RPC'leri hazırlandı. İndirme her istekte JWT/RLS kontrolünden geçer; reusable signed URL üretimi kapalıdır.
 - Resend worker'ı, kuyruk kilidi, alıcı yeniden yetkilendirmesi ve teslim kayıtları hazırlandı. Deno tür kontrolü başarılı. Gerçek gönderim kapalıdır.
+- Kullanıcının son kararı: Resend kurulumu Lawroom'un kendi domainini bekler. Dietroom ile çalışma zamanı/veri/domain/anahtar bağlantısı yoktur; yalnız ürün benchmark'ıdır. Resend anahtarı oluşturulmadı.
 - Yayın demosunda kurgusal avukat profilleri; Kâtip resmi ve Auth dönüş yolu Pages alt dizinini destekler.
 
 Canlı uygulanmamış işlemler ve sınırlar: [kurulum paketi](release-setup.md).
