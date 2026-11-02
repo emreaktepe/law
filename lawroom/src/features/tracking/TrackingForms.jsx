@@ -35,7 +35,7 @@ export function ProceedingForm({ matter, initial, onSave, onClose, busy }) {
     <Footer busy={busy} onClose={onClose} label="Gelişmeyi ve seçilen işleri kaydet"/>
   </form>;
 }
-export function TaskForm({ matter, actorId, onSave, onClose, busy }) {
+export function TaskForm({ matter, actorId, onSave, onClose, busy, mode = 'demo' }) {
   const [kind, setKind] = useState('work');
   return <form className="tracking-form" onSubmit={e => { e.preventDefault(); const p = read(e); onSave('add_task', { ...p, kind, sharedWithClient: check(p, 'sharedWithClient') }); }}>
     <Field title="Görev türü"><select value={kind} onChange={e => setKind(e.target.value)}><option value="work">Büro içi iş</option><option value="client_document_request">Müvekkilden belge talebi</option></select></Field>
@@ -43,7 +43,7 @@ export function TaskForm({ matter, actorId, onSave, onClose, busy }) {
     <div className="two"><Field title="Çalışma hedefi"><input type="date" name="dueOn"/></Field><Field title="Öncelik"><select name="priority"><option value="normal">Normal</option><option value="high">Yüksek</option><option value="critical">Kritik</option></select></Field></div>
     <Field title="Sorumlu"><select name="assigneeId"><option value={actorId}>Ben</option>{(matter.members || []).filter(m => m.userId !== actorId && m.active !== false && m.role !== 'viewer').map(m => <option key={m.userId} value={m.userId}>{m.name || m.userId}</option>)}</select></Field>
     <Field title="Kontrol listesi / tamamlanma ölçütü"><textarea name="note" maxLength={2000}/></Field>
-    {kind === 'client_document_request' && <><label className="tracking-check"><input name="sharedWithClient" type="checkbox" disabled={!matter.client}/>Müvekkilin “Sizden beklenen” alanına ekle</label><p>Dosya ayrıca paylaşıldığında görünür. Demo yüklemesi yalnız açık talebe bağlı olarak bu tarayıcıda yapılır; canlı yükleme Storage erişim kurallarına bağlıdır.</p></>}
+    {kind === 'client_document_request' && <>{mode === 'live' && <Field title="Belge istenecek müvekkil"><select name="requestedClientId" required><option value="">Kabul edilmiş müvekkili seçin</option>{(matter.clients || []).map(client => <option key={client.id} value={client.id}>{client.name}</option>)}</select></Field>}<label className="tracking-check"><input name="sharedWithClient" type="checkbox" disabled={!matter.client}/>Müvekkilin “Sizden beklenen” alanına ekle</label><p>Dosya ayrıca paylaşıldığında görünür. {mode === 'demo' ? 'Demo yüklemesi yalnız açık talebe bağlı olarak bu tarayıcıda yapılır.' : 'Müvekkil yalnız kendisine atanmış, açık ve paylaşılan talebe belge ekleyebilir.'}</p></>}
     <p>Çalışma hedefi hukuki son gün yerine geçmez.</p><Footer busy={busy} onClose={onClose}/>
   </form>;
 }

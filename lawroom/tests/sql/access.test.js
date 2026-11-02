@@ -23,9 +23,10 @@ before(async () => {
       "utf8",
     ),
   );
+  // Prior-migration regression fixture; tracking-access.test.js tests the full cutover.
   for (const file of (
     await readdir(new URL("../../supabase/migrations/", import.meta.url))
-  ).sort())
+  ).filter(file => !file.includes("002_matter_tracking")).sort())
     await db.exec(
       await readFile(
         new URL("../../supabase/migrations/" + file, import.meta.url),
