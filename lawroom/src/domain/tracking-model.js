@@ -15,7 +15,7 @@ export function trackingMatter(matter) {
   const m = structuredClone(matter);
   const template = m.stageTemplate || m.stageSnapshot || getMatterTemplate(m.type || m.matter_type);
   const resolvedStage = template?.stages.find(s => s.key === (m.stageKey || m.stage_key) || s.label === m.stage || s.key === normalizeSearchText(m.stage).replaceAll(' ', '_'));
-  return { ...matterViewRecord(m), stageKey: resolvedStage?.key || m.stageKey || m.stage_key || m.stage, number: m.number || m.reference || '', type: m.type || m.matter_type || 'Diğer',
+  return { ...matterViewRecord(m), client: m.client ?? (m.clients || []).map(c=>c.name).filter(Boolean).join(', '), stageKey: resolvedStage?.key || m.stageKey || m.stage_key || m.stage, number: m.number || m.reference || '', type: m.type || m.matter_type || 'Diğer',
     summary: m.summary || m.client_summary || '', stageTemplate: template ? structuredClone(template) : null,
     tasks: (m.tasks || []).map((t, i) => ({ ...t, id: t.id || `legacy-task-${m.id}-${i}`, dueOn: t.dueOn || t.due_on || null })),
     events: (m.events || []).map((e, i) => ({ ...e, id: e.id || `legacy-event-${m.id}-${i}`, occurredOn: e.occurredOn || e.occurred_on || e.date, eventType: e.eventType || e.event_type || 'diger' })),
@@ -39,7 +39,7 @@ export function cockpitModel(matter, now = new Date().toISOString()) {
     ...m.deadlines.filter(d => !['met', 'waived', 'cancelled'].includes(d.status)).map(d => ({ kind: 'Süre', id: d.id, title: d.title || 'Süre incelemesi' })),
     ...m.agendaItems.filter(a => !a.status || a.status === 'planned').map(a => ({ kind: 'Takvim', id: a.id, title: a.title })),
   ];
-  return { matter: m, next, upcoming, blockers, readonly: isArchived(m), counts: { tasks: m.tasks.filter(isOpenTask).length, deadlines: m.deadlines.filter(d => ['proposed', 'invalidated'].includes(d.status)).length, events: m.events.length } };
+  return { matter: m, next, upcoming, blockers, readonly: m.readonly === true || isArchived(m), counts: { tasks: m.tasks.filter(isOpenTask).length, deadlines: m.deadlines.filter(d => ['proposed', 'invalidated'].includes(d.status)).length, events: m.events.length } };
 }
 
 /** Explicit allow-list. This demo preview is never a substitute for server RLS. */

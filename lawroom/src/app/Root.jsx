@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import DemoApp from "./DemoApp.jsx";
 import Welcome from "../Welcome.jsx";
 import { AuthProvider, useAuth } from "../features/auth/AuthContext.jsx";
@@ -6,10 +6,14 @@ import AuthPage from "../features/auth/AuthPage.jsx";
 import AuthLayout from "../features/auth/AuthLayout.jsx";
 import OnboardingPage from "../features/onboarding/OnboardingPage.jsx";
 import LiveWorkspace from "../features/workspace/LiveWorkspace.jsx";
+import { trackingV2Enabled } from "../domain/tracking-ui-contract.js";
 import { accessState } from "../domain/onboarding.js";
-function Routes() {
+import { showWelcome, authCallbackError, authRetryUrl, workspaceDestination } from "../domain/auth-entry.js";
+const TrackingLiveWorkspace = lazy(() => import('../features/workspace/TrackingLiveWorkspace.jsx'));
+export function Routes() {
   const [hash, setHash] = useState(location.hash),
     auth = useAuth();
+  const [actionError, setActionError] = useState('');
   useEffect(() => {
     const change = () => {
       setHash(location.hash);
@@ -73,7 +77,9 @@ function Routes() {
       </AuthLayout>
     );
   const callback = new URLSearchParams(location.search).has("code");
-  if (!route && !callback)
+  const callbackError = authCallbackError({ search: location.search, hash });
+  if (callbackError) return <AuthLayout><h2>Giriş bağlantısı açılamadı.</h2><p role="alert">{callbackError}</p><a className="primary" href={authRetryUrl(location.href)}>Yeni giriş bağlantısı iste</a></AuthLayout>;
+  if (showWelcome({ route, callback, ...auth }))
     return (
       <Welcome
         onDemo={enter}
@@ -106,7 +112,11 @@ function Routes() {
       auth.identity?.account,
       auth.identity?.application,
     );
-    return state === "active" ? <LiveWorkspace /> : <OnboardingPage />;
+    if (state !== 'active') return <OnboardingPage />;
+    const destination = workspaceDestination(auth.identity.account.role, trackingV2Enabled(import.meta.env));
+    if (destination === 'admin') return <LiveWorkspace />;
+    if (destination === 'tracking') return <Suspense fallback={<AuthLayout><p role="status">Çalışma alanınız hazırlanıyor…</p></AuthLayout>}><TrackingLiveWorkspace /></Suspense>;
+    return <AuthLayout><h2>Çalışma alanınız hazırlanıyor.</h2><p>Hesabınız doğrulandı. Dosya çalışma alanı bu yayında henüz açılmadı; örnek deneyimi inceleyebilirsiniz.</p>{actionError && <p role="alert">{actionError}</p>}<a className="primary" href="#demo?role=lawyer">Demoyu incele</a><button className="text" onClick={() => auth.signOut().catch(() => setActionError('Çıkış yapılamadı. Yeniden deneyin.'))}>Çıkış yap</button></AuthLayout>;
   }
   if (route === "ilk-kurulum" && auth.dataMode === "demo")
     return <OnboardingPage preview />;

@@ -1,5 +1,7 @@
 # Giriş, ilk kurulum, belgeler ve yayın paketi
 
+> **2 Kasım canlı güncellemesi:** Dört migration ve private bucket lawportal'a uygulandı; Auth Pages URL/redirect ayarları kaydedildi. Aşağıdaki “uygulanmalı/henüz erişim yok” ifadeleri önceki hazırlık kaydıdır. Güncel doğrulama, history ve gerçek Auth/Storage/Realtime kabul sınırları: [canlı kurulum kaydı](supabase-live-rollout.md). SQL dosyaları ve foundation yeniden çalıştırılmaz. Web yayını hâlâ demo; Resend domain bekler.
+
 ## Yerel yapı
 
 `src/main.jsx` yalnız uygulamayı başlatır. `app/Root.jsx` hash rotalarını, `app/DemoApp.jsx` mevcut demoyu, `features/auth`, `features/onboarding`, `features/workspace` yeni akışları içerir. Demo kayıtları `data/demoRepository.js`; canlı sorgular `data/supabaseRepository.js` üzerinden yürür.

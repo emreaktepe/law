@@ -1,6 +1,12 @@
 # Ticket durumu — 2 Kasım 2026
 
-Bu kayıt, `agents.md` başlangıç envanterini günceller. **Yerel demo kabulü, canlı ticket kabulü değildir.** Mevcut GitHub Pages yayını demo olarak kalır. Canlı SQL/Storage/SMTP/Realtime işlemleri bu geliştirme turunda yapılmadı.
+**Oturum kırılmaları:** PKCE kök yönlendirmesi, yükleme sırasında çıkış, eski kimlik/refresh yanıtları, expired callback ve kapalı gate'in eski ham API'ye düşmesi düzeltildi. Son kaynak kontrolü **138 unit + 34 SQL, Pages build1731** başarılı; [akış kanıtı ve gerçek servis testi sınırı](auth-flow-fixes.md).
+
+Bu kayıt, `agents.md` başlangıç envanterini günceller. **Yerel demo kabulü, canlı ticket kabulü değildir.** Mevcut GitHub Pages yayını demo olarak kalır. **2 Kasım canlı devamında dört SQL migration ve private Storage bucket uygulandı; Auth dönüş URL'leri kaydedildi.** SMTP/Realtime etkinleştirilmedi. [Canlı kayıt](supabase-live-rollout.md) aşağıdaki eski yerel checkpoint'lerden önceliklidir.
+
+**Canlı ilerleme:** T1.1–T1.4/T2.1/T3/T4 için şema/RPC ve private bucket artık gerçek projede var; 32 tablo/299 kolon/RLS, rollback'li gerçek DB rol testi ve anonim HTTP reddi kontrol edildi. T2.1/T4.1 yalnız uygulama bekliyor diye okunmamalı. CLI history/baseline/boş diff ile gerçek Auth token/Storage bayt/Realtime ve canlı frontend kabulü açık. Bunlar tamamlanmadan bütün ticket'lar kapatılmaz; 49 maddenin önceki dağılımı bu canlı ilerlemeyi tüm kabul kapanışı olarak saymaz.
+
+**Son yerel devam:** Migration002/DTO/adapter + varsayılan kapalı çalışma alanı **128 unit + 34 SQL ve Pages build1729** ile doğrulandı; sentetik tarayıcı kabulü tamamlandı. Canlı kurulum yapılmadı, flag `false`, yeni hazırlık yayınlanmadı. Aşağıdaki “canlı UI bağlantısı” açıkları artık bazı çekirdek ekranlarda mock ile hazırlanmıştır; gerçek servis kabulü ve bütün liste/Bugün/toplu işlem/import ekranlarının geçişi hâlâ açıktır. [Tam sınır ve kalanlar](tracking-ui-cutover.md).
 
 Araştırma: [Dosya takibi ve 17 kullanım senaryosu](matter-workflow-research.md). Arayüz/davranış kanıtları: [Kokpit doğrulaması](verification-tracking.md), [Liste, Bugün, sihirbaz ve komut paleti](verification-workbench-local.md).
 
@@ -10,14 +16,14 @@ Araştırma: [Dosya takibi ve 17 kullanım senaryosu](matter-workflow-research.m
 | T0.2 | Bağımsız bağımlılıklar, lock ve repo-local native OS ayarı; temiz kurulum doğrulandı. |
 | T0.3 | `main.jsx` küçük bootstrap; Root, demo, auth, onboarding, liste, kokpit ve workbench özellik klasörlerinde. Legacy demo kodunun tamamı henüz silinmedi. |
 | T0.4 | Veri yazmaları repository katmanında. Yeni aggregate komutları taze yükleme → doğrulama → tek yazma yapar. |
-| T0.5 | **Açık:** CLI baseline/db pull ve boş db diff henüz alınmadı. Dashboard erişimi var; bu sohbetin MCP yönlendirmesi eski hesabı seçiyor. CLI hesabı değiştirilmedi. |
+| T0.5 | **Açık:** CLI baseline/db pull ve boş db diff henüz yok. Bu görevde doğru LawRoom hesabına açık bağlantı kimliğiyle metadata erişimi doğrulandı; CLI DB yetkisi/bağlantısı ve servis ortamı henüz doğrulanmadı. Foundation tekrar uygulanmadı. |
 | T0.6 | Eski site erişim incelemesi ve RLS planı yazılı. Eski tablolara canlı değişiklik yok. |
 | T0.7 | Branch, PR şablonu ve GitHub Actions/Pages kurulu; önceki yayın yeşil. Yeni sürüm son yayın doğrulamasıyla kaydedilir. |
 | T1.1–T1.4 | Auth/onboarding/onay/atama/kabul UI ve migration taslakları ile SQL fixture testleri var. **Açık:** doğru projeye uygulama, gerçek Auth kullanıcılarıyla E2E. |
 | T1.5 | **Açık:** büro daveti ve canlı üyelik kabul RPC/UI. Büro üyeliği kendiliğinden dosya erişimi açmamalı. |
-| T2.1 | **Açık:** baseline sonrası ekip, numara, safahat, görev, takvim, belge sürümü, masraf vb. genişletme migration'ı; gerçek RLS matrisi/atomik RPC testleri. Mevcut foundation tekrar çalıştırılmadı. |
+| T2.1 | **Testli yerel hazırlık, canlı kabul açık:** CLI ile oluşturulmuş gerçek Migration002, 15 tablo/182 kolon, ekip/kolon grant korumaları, atomik RPC gövdeleri, server DTO ve adapter eklendi. 23 yeni tam tracking SQL senaryosu geçti. Baseline + gerçek Supabase Auth/Storage/PostgREST/E2E ve birlikte UI cutover bekliyor. [Kanıt/hash/rollback](migration-002-local.md). |
 | T2.2 | 12 sürümlü/doğrulanmamış tür şablonu, alt türler, sade müvekkil etiketleri, 24 safahat türü ve numara normalizasyonu testli. |
-| T2.3 | Yerel beş adımlı sihirbaz; numarasız/müvekkilsiz özel dosya, snapshot, ilk görev. **Açık:** canlı `lr_create_matter`. |
+| T2.3 | Yerel beş adımlı sihirbaz; numarasız/müvekkilsiz özel dosya, snapshot, ilk görev. Yeni `lr_create_matter` gövdesi sentetik SQL testli. **Açık:** gerçek Supabase uygulaması ve canlı UI bağlantısı/E2E. |
 | T2.4 | Yerel kolonlu liste, çoklu filtre, sıralama, gruplama, yoğunluk, klavye; 500 dosya/10 bin olay benchmark'ı. Son performans sonucu doğrulama belgesinde. |
 | T2.5 | Yerel kayıtlı/sabit/varsayılan görünümler, URL durumu ve geri alma; hesap namespace ayrımı. Canlı `lr_saved_views` T2.1'e bağlı. |
 | T2.6 | Yerel kokpit: numaralar/kopyalama, şablon aşamaları, hesaplanan sıradaki iş, kaynak ve neden, sekmeler, mobil kart ve hızlı işlemler. |
@@ -32,13 +38,13 @@ Araştırma: [Dosya takibi ve 17 kullanım senaryosu](matter-workflow-research.m
 | T2.15 | Yerel gerçek CSV/XLSX okuma, kolon eşleme, önizleme, satır hataları, mükerrer kontrolü, tek toplu yazma ve değişmemiş batch için geri alınabilir arşiv. Canlı batch transaction T2.1'e bağlı. |
 | T2.16 | Yerel açık görev/süre/takvim/manuel hedef kontrolü, gerekçeli kapanış, salt okunur arşiv ve gerekçeli yeniden açma. Paylaşım otomatik açılmaz. |
 | T3.1 | Saf aritmetik motoru; hafta sonu/tatil, yıl/ay sonu, artık yıl, açık adli tatil kuralı ve belirsizlik testleri var. **Açık:** kaynaklı gerçek tatil verisi, hukukçu onaylı kural kataloğu ve canlı tablolar. Onaylı mevzuat kuralı sunulmuyor. |
-| T3.2 | Yerel tebliğ/dayanak/kaynak/kural sürümü/avukat onaylı doğrulama diyaloğu; kaynak değişikliği invalidated; gerekçeli sonuçlandırma. **Açık:** canlı RPC. |
+| T3.2 | Tebliğ/dayanak/kaynak/kural sürümü/avukat onaylı yerel diyalog ve yeni SQL RPC gövdesi testli; date-only korunur, kaynak düzeltmesi invalidated yapar. **Açık:** gerçek Supabase kabulü ve canlı UI bağlantısı. |
 | T3.3 | Yerel kokpit ajandası, görev hedefleri ve öneri/doğrulanmış sürelerin ortak takvimde türetilmesi; müvekkile iç hedef/süre yok. **Açık:** `lr_agenda_items` bağlantısı ve eski bağımsız demo takvim kayıtlarının ortak modele taşınması. |
 | T3.4 | Yerel duruşma sonucu → safahat + ara karar görevleri + sonraki duruşma tek aggregate yazması. **Açık:** canlı RPC ve takvim kaynağının tam birleşmesi. |
 | T3.5 | **Açık:** büro sorumlu filtresi ve sunucuda iptal edilebilir ICS abonelik token'ı. Statik dosya indirmek abonelik kabulü sayılmadı. |
 | T4.1 | Private Storage migration taslağı ve yerel SQL testleri. Tekrar kullanılabilir signed URL yerine her indirmede güncel yetki kontrolü seçildi. **Açık:** canlı bucket/policy uygulaması ve HTTP erişim testi. |
 | T4.2 | Yerel gerçek Blob/IndexedDB yükleme, SHA-256, silinmeyen sürümler, kategori/kaynak safahat, resim ve tarayıcı PDF önizleme; UDF/DOCX orijinal indirme. **Açık:** gerçek Storage sürüm şeması ve pdf.js gereksinimi için büyük/çok sayfalı PDF kabulü. |
-| T4.3 | Yerel sade müvekkil ana ekranı/detayı, allow-list önizleme, paylaşılan olay/ajanda/belgeler ve “Sizden beklenen”. İç not/hesap/ekip/özel taraf iletişimi aktarılmaz. **Açık:** canlı DTO ve ağ E2E kabulü. |
+| T4.3 | Yerel sade müvekkil ekranı ve allow-list önizleme; yeni SQL server DTO + adapter sözleşmesi iç alan sızıntısına karşı testli. **Açık:** gerçek PostgREST ağ yanıtı, Auth/RLS/E2E ve canlı UI cutover. |
 | T4.4 | Yerel açık paylaşılan belge talebine müvekkil yüklemesi → görev inceleme bekliyor; avukat inceleyip tamamlar. **Açık:** canlı talep tabloları/Storage RLS ve gerçek iki kullanıcı testi. |
 | T4.5 | Yerel iki yönlü dosya mesajları, kaynak ve zaman; yeni müvekkil mesajı Bugün sıralamasına girer. **Açık:** canlı Realtime subscription ve ilişki iptalinde kesilme testi. |
 | T4.6 | Yerel masraf kalemi/tutar/tarih/ödeyen/yansıtma/not, para birimine göre kuruş hassasiyetli toplam ve gerekçeli ters kayıt. Canlı tablo T2.1'e bağlı. |
@@ -57,3 +63,8 @@ Araştırma: [Dosya takibi ve 17 kullanım senaryosu](matter-workflow-research.m
 ## Yayın sınırı
 
 Bu sürüm etkileşimli, kurgusal demo olarak yayınlanabilir. Yerel test veya mock Postgres sonucu, canlı hesap/izin veya gerçek veri işleme uygunluğu kanıtı değildir. Üretim moduna geçiş yukarıdaki açık kabul eylemlerine bağlıdır.
+## T2.1 yerel SQL/adapter devamı — 2 Kasım 2026
+
+CLI-generated Migration002 ve server DTO/adapter gerçek repoya eklendi; **111/111 unit + 31/31 SQL + build1722** geçti. SQL sayısı, 8 önceki migration regresyonu ve 23 yeni tam tracking cutover testinden oluşur. PGlite gerçek Auth/Storage/Realtime HTTP kabulü değildir. Yeni SQL/adapter runtime'a bağlanmadı; eski LiveWorkspace ham tablo çağrılarıyla birlikte üretime uygulanmamalı. Canlı DB/credential/SMTP/Realtime/yayın değişmedi.
+
+49 maddede 20 yerel teslim/plan kanıtı, 16 kısmi/yerel hazırlık (T2.1 dahil), 13 açık/parça/karar vardır. Hiçbir yeni canlı kabul kapanmadı. Tam kapsam, migration hash'i, rollback ve gereken en küçük karar paketi: [Migration002 yerel hazırlık](migration-002-local.md).
